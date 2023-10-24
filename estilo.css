@@ -1,0 +1,294 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+/* Aqui eu começo a planejar as cores foco do site */
+#main {
+    text-align: center;
+    background: linear-gradient(to right,rgb(6, 148, 6),rgb(78, 12, 139) );
+    height: 400px;
+
+}
+
+.logo {
+    padding: 40px;
+    font-size: 4em;
+}
+
+/* Utilizo das cores do menu na logo do site que contem meu nome e o nome das abas principais*/
+h2{
+    color: transparent;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    top: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    background: linear-gradient(
+        green,
+        purple
+    );
+    -webkit-text-stroke: 0.0001em #ffffff;
+    text-stroke: 0.04em #ffffff;
+    -webkit-background-clip: text;
+            background-clip; text;
+            line-height: 1.1em;
+            animation: rainbow 50s linear infinite;
+}
+@keyframes rainbow{
+    100%{
+        background-position: 0 30em
+    }
+}
+
+
+/* um sisteminha simples decorativo pra o site que ao por o mouse em cima aparece uma barra rosa*/
+.menu {
+    padding: 40px;
+    width: max-content;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    margin: 100px auto;
+    position: absolute;
+    top: 150px;
+    left: 400px;
+   
+}
+
+.menu::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    background-color: purple;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+  
+}
+.menu:hover::after{
+    transform: scaleX(1);
+}
+.menu a:link, .menu a:visited {
+    color: black  ;
+    text-decoration: none;
+    font-size: 1.6em;
+    padding: 30px;
+}
+
+.menu a:hover {
+    color: greenyellow;
+    font-size: 2.3em;
+}
+
+/* organizando o conteudo do site*/
+#content {
+    text-align: center;
+    position: absolute;
+    top: 500px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+}
+
+#formacoes {
+    text-align: center;
+    position: absolute;
+    top: 500px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+}
+
+/* botão para abrir meus portfólios focando em uma animação com cores harmonicas com a do menu*/
+.link {
+   font-size: 64px;
+   font-weight: 700;
+   text-decoration: none;
+   display: inline-block;
+   color: rgba(155, 6, 214, 0.788);
+   padding: 16px 64px;
+   border: rgba(155, 6, 214, 0.788) 8px solid;
+   border-radius: 16px;
+   box-shadow: inset 0 0 32px 0 rgba(155, 6, 214, 0.788), 0 0 32px 0 rgba(155, 6, 214, 0.788);
+   text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px;
+
+   position: relative;
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+
+    background: rgba(155, 6, 214, 0.788);
+
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(64px) rotateX(40deg)scale(1, 0.35);
+    filter: blur(64px);
+    opacity: 0.7;
+    pointer-events: none;
+
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 128px 32px rgba(155, 6, 214, 0.788);
+    opacity: 0;
+    background-color: rgba(155, 6, 214, 0.788);
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+
+.link:hover::before,
+.link:hover::after {
+    opacity: 2;
+}
+
+.link:hover {
+    color: darkgreen;
+    text-shadow: none;
+}
+
+.adjustment {
+    position: absolute;
+    top: 500px;
+    left: 800px;
+}
+
+h3 {
+    color: white;
+}
+
+/* parte do formulario no qual prefiro utilizar coloração de fundo tambem harmonica com o resto do site*/
+#contentt {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image: linear-gradient(to right, green, purple);
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 400px;
+    height: 350px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+fieldset {
+    border: 4px solid transparent;
+}
+
+legend {
+    font-size: 2em;
+    padding: 20px;
+}
+
+.socialmedia {
+    text-align: center;
+}
+/* ajustes a seguir são em questão decorativa pra ficar nas proporções certas*/
+.adjust1 {
+    position: relative;
+    top: 3px;
+}
+
+.adjust2 {
+    position: relative;
+    top: 10px;
+}
+
+.visual1{
+    color: transparent;
+    position: absolute;
+    
+    left: 1 0%;
+    top: 2%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    background: linear-gradient(
+        green,
+        purple
+    );
+    -webkit-text-stroke: 0.0001em #ffffff;
+    text-stroke: 0.04em #ffffff;
+    -webkit-background-clip: text;
+            background-clip; text;
+            line-height: 1.1em;
+            animation: rainbow 50s linear infinite;
+}
+@keyframes rainbow{
+    100%{
+        background-position: 0 30em
+    }
+}
+
+/* usando a mesma proposta do h2 principal do site porem na parte do formulario */
+.visual2{
+    color: transparent;
+    position: absolute;
+    left: 30%;
+    bottom: 30%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    background: linear-gradient(
+        green,
+        purple
+    );
+    -webkit-text-stroke: 0.0001em #ffffff;
+    text-stroke: 0.04em #ffffff;
+    -webkit-background-clip: text;
+            background-clip; text;
+            line-height: 1.1em;
+            animation: rainbow 50s linear infinite;
+}
+@keyframes rainbow{
+    100%{
+        background-position: 0 30em
+    }
+}
+/* ajustes a seguir são em questão decorativa pra ficar nas proporções certas*/
+.adjust3 {
+    font-size: 15px;
+}
+
+.adjust4 {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+}
+
+.adjust5 {
+    position: absolute;
+    top: 60%;
+    left: 25%;
+}
+
+.adjust6 {
+    font-size: 1.5em;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
